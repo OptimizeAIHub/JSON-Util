@@ -1,0 +1,80 @@
+{
+  "name": "jsonutil",
+  "displayName": "JSON Validator, Formatter and Java Model Generator",
+  "description": "Validates JSON, formats JSON, and generates Java model classes.",
+  "version": "1.1.5",
+  "publisher": "SureshNettur",
+  "engines": {
+    "vscode": "^1.36.1"
+  },
+  "icon": "icon.png",
+  "author": "Suresh Nettur",
+  "contributors": [
+    "Akhil Dusi",
+    "Unnati Nettur"
+  ],
+  "categories": [
+    "Programming Languages", 
+    "Snippets",
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "Json", 
+    "Formatter", 
+    "Validator", 
+    "JSON tools", 
+    "lombok", 
+    "Snippets",
+    "java",
+    "generate",
+    "generation",
+    "Model Generator",
+    "Util",
+    "Utility",
+    "Java Model Generator",
+    "Code Generator",
+    "Development",
+    "Tools"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "jsonutil.processTest",
+        "title": "JSON Validator, Formatter, Java Model Generator"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "serve": "live-server src/index.html --verbose",
+    "start": "npm run serve",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.36.0",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "live-server": "^1.2.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "config": "^3.3.12",
+    "openai": "^4.55.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nsuresh9806/JSONUTIL.git"
+  }
+}
