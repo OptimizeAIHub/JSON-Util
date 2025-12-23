@@ -2,7 +2,7 @@
 
 This VSCode extension provides an efficient way to validate, format, and generate Java model classes from JSON input. It simplifies the workflow for developers dealing with JSON data and Java projects by ensuring the JSON structure is valid and converting it into clean, well-structured Java classes.
 
-**Authors**: Suresh Nettur, Akhil Dusi, and Unnati Nettur.
+**Author(s)**: Suresh Babu Nettur.
 
 ## Features
 
