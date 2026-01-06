@@ -24,24 +24,33 @@ The generated classes include:
     User-Friendly Interface: Input fields for JSON and class name, with real-time feedback.
 
 ### 1.0.1
-
 Backward compatibility.
 
 ### 1.1.0
-
 Added Lombok code generation.  
 Added required imports.
 
 ### 1.1.1 and 1.1.2
-
 No changes to the extension.
 Updated Readme, Change Log and Package details.
 
 ### 1.1.3
+Updated Readme, added logo.
 
-Updated Readme, added logo
+### 1.1.4
+Updated logo, look and feel.
 
-### 1.2.0 (Future Version)
+### 1.1.5
+Updated License.
+
+### 1.1.6
+Minor Readme and License changes.
+
+### 1.1.7
+Updated Theme.
+
+
+### Future Version(s)
 
 Planned improvements to include:  
     Support for custom constructors in generated Java classes.  

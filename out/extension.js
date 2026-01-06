@@ -239,31 +239,10 @@ function getWebviewContent() {
   <html>
     <head>
         <style>
-			textarea {
-  				resize: none;
-				padding: 15px;
-				font-size: 16px;
-				font-family: 'Arial', sans-serif;
-				color: #333;
-				background: linear-gradient(135deg, #e0f7fa, #e1bee7);
-				border: 2px solid #673ab7;
-				border-radius: 12px;
-				box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-				overflow: auto;
-				outline: none;
-				transition: all 0.3s ease-in-out;
+			body {
+  				background-color: var(--vscode-editor-background, #0f172a);
+  				color: var(--vscode-editor-foreground, #e5e7eb);
 			}
-		    .fancy-input {
-				width: 15%;
-				padding: 10px 10px 10px 5px;
-				font-size: 18px;
-				border: 1px solid #ccc;
-				border-radius: 5px;
-				outline: none;
-				background: none;
-				background-color: #f7f7f7;
-				transition: border-color 0.3s ease-in-out;
-		    }
 			table {
 				font-family: arial, sans-serif;
 				border: 0px solid #dddddd;
@@ -274,14 +253,40 @@ function getWebviewContent() {
 				text-align: center;
 				padding: 0px;
 			}
-			.fancy-button {
+			input[type="text"] {
+				width: 15%;
+				padding: 10px 10px 10px 5px;
+				font-size: 18px;
+				color: #fff;
+				background: #34495e;
+				border: 2px solid #34495e;
+				border-radius: 4px;
+				outline: none;
+				background: none;
+				transition: border-color 0.3s ease-in-out;
+		    }
+			textarea {
+  				resize: none;
+				padding: 15px;
+				font-size: 16px;
+				font-family: 'Arial', sans-serif;
+				color: #333;
+				background: #d5d8dc;
+				border: 2px solid #34495e;
+				border-radius: 12px;
+				box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+				overflow: auto;
+				outline: none;
+				transition: all 0.3s ease-in-out;
+			}
+			input[type="button"] {
 				display: inline-block;
 				padding: 12px 24px;
 				font-size: 16px;
 				font-family: 'Arial', sans-serif;
 				font-weight: bold;
 				color: #fff;
-				background: linear-gradient(135deg, #ff4081, #2196f3);
+				background: #34495e;
 				border: none;
 				border-radius: 30px;
 				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -294,7 +299,7 @@ function getWebviewContent() {
             	font-family: 'Georgia', serif;
             	font-size: 30px;
             	text-align: center;
-				background: linear-gradient(135deg, #36d1dc, #5b86e5);
+				background: #5d6d7e;
 				color: transparent;
 				-webkit-background-clip: text;
 				background-clip: text;
@@ -308,7 +313,7 @@ function getWebviewContent() {
 			h4.fancy {
 				font-family: 'Courier New', monospace;
 				font-size: 16px;
-				color: #ffffff;
+				color: #5d6d7e;
 				text-align: center;
 				letter-spacing: 1.5px;
 				transition: all 0.3s ease-in-out;
@@ -318,7 +323,7 @@ function getWebviewContent() {
 				font-family: 'Arial', sans-serif;
 				font-size: 18px;
 				font-weight: bold;
-				color: #ADD8E6;
+				color: #7f8c8d;
 				letter-spacing: 1px;
 			}
 			select.fancy-select {
@@ -352,12 +357,13 @@ function getWebviewContent() {
 	
 	<body>
 
-	<script type="text/javascript">
+	<script>
 
 		const vscode = acquireVsCodeApi(); 
 
 		function clearAll() {
-			document.getElementById("txt").value = "";
+			document.getElementById("txt").value = '{"tag1":"value1","tag2":"value2"}';
+			document.getElementById("className").value = "";
 			document.getElementById("formattedJsonText").value = "";
 			document.getElementById("javaModelText").value = "";
 			document.getElementById("javaModelLombokText").value = "";
@@ -386,29 +392,28 @@ function getWebviewContent() {
     		<tr>
         		<td>
 					<h1 class="fancy">JSON Utility</h1>
-					<h4 class="fancy">Validator, Formatter, Java Model generator<h4>
+					<h4 class="fancy">Validator, Formatter, Java Model generator</h4>
 				</td>
     		</tr>
 
 			<tr>
 				<th>
 					<label class="fancy-label">Java Class Name</label>
-					<input type="text" id="className" name="className" placeholder="ClassName" value="ClassName" class="fancy-input">
+					<input type="text" id="className" name="className" placeholder="ClassName">
 				</th>
 			</tr>
 			<tr><td>&nbsp;</td></tr>
 			<tr>
         		<td>
-					<textarea id="txt" rows="14" cols="95" align="left">{"tag1":"value1","tag2":"value2"}
-					</textarea>
+					<textarea id="txt" rows="14" cols="95" align="left">{"tag1":"value1","tag2":"value2"}</textarea>
 				</td>
     		</tr>
 			<tr><td>&nbsp;</td></tr>
 			<tr>
 				<td>
-					<input class="fancy-button" type="button" onclick="displayOut()" value=" Process ">
+					<input type="button" onclick="displayOut()" value=" Process ">
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<input class="fancy-button" type="button" onclick="clearAll()" value=" Clear ">
+					<input type="button" onclick="clearAll()" value=" Clear ">
 				</td>
 			</tr>
 			<tr><td>&nbsp;</td></tr>
